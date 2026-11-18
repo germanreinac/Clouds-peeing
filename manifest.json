@@ -1,0 +1,7 @@
+{
+  "manifest_version": 3,
+  "name": "Clouds Peeing",
+  "version": "0.1.0",
+  "description": "A calm sky of drifting clouds on every new tab. Mostly calm.",
+  "chrome_url_overrides": { "newtab": "index.html" }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Clouds Peeing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+
+  <!-- Home / screensaver -->
+  <div id="home-ui" class="layer">
+    <h1>Clouds Peeing</h1>
+    <p class="tag">A relaxing sky. Mostly.</p>
+    <div class="row">
+      <button id="btn-play" class="big">Play</button>
+      <button id="btn-custom">Customize</button>
+      <button id="btn-full">Fullscreen</button>
+    </div>
+    <p class="hint">Leave it alone and the menu fades away — instant screensaver.</p>
+  </div>
+
+  <!-- Customize panel -->
+  <aside id="custom" class="panel hidden">
+    <header><h2>Your sky</h2><button class="close" data-close="custom">✕</button></header>
+    <label>Clouds</label><div class="seg" data-key="style"></div>
+    <label>Sky</label><div class="seg" data-key="sky"></div>
+    <label>Mode</label><div class="seg" data-key="mode"></div>
+    <label>How many <output id="out-amount"></output></label>
+    <input type="range" id="rng-amount" min="1" max="24" step="1">
+    <label>Wind <output id="out-wind"></output></label>
+    <input type="range" id="rng-wind" min="0" max="4" step="0.1">
+    <label class="check"><input type="checkbox" id="chk-faces"> Give the clouds faces</label>
+  </aside>
+
+  <!-- Scene select -->
+  <div id="scenes" class="overlay hidden">
+    <div class="card">
+      <header><h2>Pick a scene to ruin</h2><button class="close" data-close="scenes">✕</button></header>
+      <div id="scene-list"></div>
+    </div>
+  </div>
+
+  <!-- In-game HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <button id="btn-quit">← Sky</button>
+      <div class="stat"><span>Score</span><b id="hud-score">0</b></div>
+      <div class="stat"><span>Time</span><b id="hud-time">45</b></div>
+      <div class="stat wide"><span id="hud-tank-label">Bladder</span><div class="bar"><i id="hud-tank"></i></div></div>
+      <button id="btn-mode"></button>
+    </div>
+    <div id="banner"></div>
+    <div class="hud-help">Move to aim · hold click / touch / space to let go · hover over water to refill</div>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="overlay hidden">
+    <div class="card center">
+      <h2 id="res-title"></h2>
+      <p id="res-body"></p>
+      <div class="row">
+        <button id="btn-again" class="big">Again</button>
+        <button id="btn-scenes">Scenes</button>
+        <button id="btn-home">Back to sky</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/clouds.js"></script>
+  <script src="js/screensaver.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
